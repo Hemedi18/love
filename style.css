@@ -1,0 +1,203 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Poppins,sans-serif;
+overflow:hidden;
+height:100vh;
+background:linear-gradient(
+-45deg,
+#ff006e,
+#ff5e78,
+#ff85a1,
+#ffc2d1
+);
+background-size:400% 400%;
+animation:bgMove 12s ease infinite;
+}
+
+@keyframes bgMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+.glass-card{
+width:min(90%,700px);
+padding:40px;
+border-radius:35px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.3);
+
+text-align:center;
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.2);
+}
+
+.emoji{
+font-size:4rem;
+animation:float 2s infinite;
+}
+
+h1{
+font-size:clamp(3rem,8vw,6rem);
+
+font-family:'Dancing Script',cursive;
+
+color:white;
+
+text-shadow:
+0 0 15px #fff,
+0 0 35px #ff4d88;
+}
+
+h2{
+color:white;
+margin-top:10px;
+}
+
+p{
+color:white;
+margin-top:20px;
+line-height:1.8;
+}
+
+button{
+margin-top:25px;
+border:none;
+padding:16px 40px;
+border-radius:50px;
+font-size:1.1rem;
+cursor:pointer;
+
+background:white;
+color:#ff006e;
+
+font-weight:bold;
+
+transition:.4s;
+}
+
+button:hover{
+transform:scale(1.15);
+}
+
+.floating-name{
+position:fixed;
+top:50%;
+left:50%;
+
+animation:orbit1 8s linear infinite;
+
+pointer-events:none;
+}
+
+.floating-name span{
+font-size:2rem;
+font-weight:bold;
+color:white;
+text-shadow:0 0 25px white;
+}
+
+.second{
+animation:orbit2 13s linear infinite reverse;
+}
+
+.third{
+animation:orbit3 18s linear infinite;
+}
+
+@keyframes orbit1{
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg)
+translateX(180px)
+rotate(0deg);
+}
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg)
+translateX(180px)
+rotate(-360deg);
+}
+}
+
+@keyframes orbit2{
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg)
+translateX(260px)
+rotate(0deg);
+}
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg)
+translateX(260px)
+rotate(-360deg);
+}
+}
+
+@keyframes orbit3{
+from{
+transform:
+translate(-50%,-50%)
+rotate(0deg)
+translateX(340px)
+rotate(0deg);
+}
+to{
+transform:
+translate(-50%,-50%)
+rotate(360deg)
+translateX(340px)
+rotate(-360deg);
+}
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+#messageBox{
+margin-top:25px;
+font-size:1.2rem;
+color:white;
+font-weight:600;
+}
+
+@media(max-width:768px){
+
+.glass-card{
+padding:25px;
+}
+
+.floating-name span{
+font-size:1.2rem;
+}
+
+}
